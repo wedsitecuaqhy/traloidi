@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Định Hướng Phát Triển</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#1da1f2;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.top-bar{
+  display:flex;
+  align-items:center;
+  padding:10px 20px;
+}
+
+/* MENU ICON */
+.menu-toggle{
+  font-size:26px;
+  color:white;
+  cursor:pointer;
+}
+
+/* SEARCH */
+.search-box{
+  margin-left:auto;
+  position:relative;
+}
+
+.search-box input{
+  padding:8px 38px 8px 14px;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  width:220px;
+}
+
+.search-box button{
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;
+  border:none;
+  color:#1da1f2;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* LIVE SUGGEST */
+.suggest-box{
+  position:absolute;
+  top:42px;
+  right:0;
+  background:white;
+  width:100%;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  display:none;
+  max-height:200px;
+  overflow:auto;
+  z-index:2000;
+}
+
+.suggest-box div{
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+.suggest-box div:hover{
+  background:#f0f0f0;
+}
+
+/* MENU */
+nav{
+  display:none;
+  background:#1da1f2;
+}
+
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+nav ul li a{
+  display:block;
+  padding:12px 20px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav ul li a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* ===== LAYOUT ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.content{
+  padding-right:300px;
+}
+
+/* ===== ADS ===== */
+.ads{
+  position:fixed;
+  top:140px;
+  right:20px;
+  width:260px;
+}
+
+.ads img{
+  width:100%;
+  border-radius:8px;
+  transition:opacity 0.5s ease;
+}
+
+/* SEARCH HIGHLIGHT */
+mark{
+  background:yellow;
+  padding:0;
+}
+
+/* FOOTER */
+footer{
+  background:#1da1f2;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="top-bar">
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm trong trang..."
+        oninput="liveSuggest()"
+        onkeydown="if(event.key==='Enter')searchText()">
+      <button onclick="searchText()">
+        <i class="fas fa-magnifying-glass"></i>
+      </button>
+
+      <div class="suggest-box" id="suggestBox"></div>
+    </div>
+  </div>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="index.html">🏠 TRANG CHỦ</a></li>
+      <li><a href="khaiquat.html">📌 Thông Tin Chung</a></li>
+      <li><a href="lichsu.html">📜 LỊCH SỬ</a></li>
+      <li><a href="vanhoa.html">🎭 VĂN HÓA</a></li>
+      <li><a href="truyenthong.html">🔥 TRUYỀN THỐNG</a></li>
+      <li><a href="diadanh.html">📍 ĐỊA DANH</a></li>
+      <li><a href="connguoi.html">👤 CON NGƯỜI</a></li>
+      <li><a href="amthuc.html">🍜 ẨM THỰC</a></li>
+      <li><a href="kinhte.html">💼 KINH TẾ</a></li>
+      <li><a href="dinhhuong.html">🚀 ĐỊNH HƯỚNG PHÁT TRIỂN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="content" id="content">
+
+<h1>Định Hướng Phát Triển Của Bình Định</h1>
+<p>Trong bối cảnh hội nhập và phát triển, Bình Định đang từng bước xây dựng định hướng phát triển toàn diện, bền vững.</p>
+
+<h2>💼 Phát triển kinh tế bền vững</h2>
+<p>Bình Định tập trung phát triển kinh tế theo hướng đa ngành.</p>
+
+<h2>🏖️ Phát triển du lịch gắn với văn hóa</h2>
+<p>Du lịch được định hướng trở thành ngành kinh tế mũi nhọn.</p>
+
+<h2>🎓 Phát triển giáo dục và nguồn nhân lực</h2>
+<p>Giáo dục là ưu tiên hàng đầu.</p>
+
+<h2>🌱 Phát triển xã hội và bảo vệ môi trường</h2>
+<p>Xây dựng xã hội văn minh.</p>
+
+<h2>🌟 Tầm nhìn tương lai</h2>
+<p>Bình Định đang từng bước vươn lên.</p>
+
+  </div>
+</div>
+
+<div class="ads">
+  <img id="adImage" src="anhhcm.jpg">
+</div>
+
+<footer>
+© Bình Định – Website giới thiệu
+</footer>
+
+<script>
+/* MENU */
+function toggleMenu(){
+  const menu=document.getElementById("menu");
+  menu.style.display=menu.style.display==="block"?"none":"block";
+}
+
+/* ADS */
+const ads=["anhhcm.jpg","anhvietnam.jpg","anhdang.jpg"];
+let i=0;
+const adImage=document.getElementById("adImage");
+setInterval(()=>{
+  i=(i+1)%ads.length;
+  adImage.style.opacity=0;
+  setTimeout(()=>{
+    adImage.src=ads[i];
+    adImage.style.opacity=1;
+  },300);
+},3000);
+
+/* SEARCH */
+function clearMark(){
+  const content=document.getElementById("content");
+  content.innerHTML=content.innerHTML.replace(/<mark>|<\/mark>/g,"");
+}
+
+function searchText(){
+  const text=searchInput.value.trim();
+  if(!text) return;
+  clearMark();
+
+  const content=document.getElementById("content");
+  const regex=new RegExp(text,"gi");
+  content.innerHTML=content.innerHTML.replace(regex,m=>`<mark>${m}</mark>`);
+
+  const first=document.querySelector("mark");
+  if(first) first.scrollIntoView({behavior:"smooth",block:"center"});
+  suggestBox.style.display="none";
+}
+
+/* LIVE SUGGEST */
+function liveSuggest(){
+  const text=searchInput.value.trim().toLowerCase();
+  const suggestBox=document.getElementById("suggestBox");
+  suggestBox.innerHTML="";
+  if(!text){
+    suggestBox.style.display="none";
+    return;
+  }
+
+  const contentText=document.getElementById("content").innerText.split(/\s+/);
+  const results=[...new Set(contentText.filter(w=>w.toLowerCase().includes(text)))].slice(0,6);
+
+  if(results.length===0){
+    suggestBox.style.display="none";
+    return;
+  }
+
+  results.forEach(word=>{
+    const div=document.createElement("div");
+    div.textContent=word;
+    div.onclick=()=>{
+      searchInput.value=word;
+      searchText();
+    };
+    suggestBox.appendChild(div);
+  });
+
+  suggestBox.style.display="block";
+}
+</script>
+
+</body>
+</html>

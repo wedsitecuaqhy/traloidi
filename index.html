@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bình Định</title>
+
+<style>
+  body { margin: 0;font-family: Arial, sans-serif; }
+
+  nav {background-color: #0b5f4a;}
+
+  nav ul {list-style: none;margin: 0;padding: 0;display: flex; }
+
+  nav ul li {position: relative;}
+
+  nav ul li a {display: block;padding: 15px 20px;color: white;text-decoration: none;font-weight: bold;}
+
+  nav ul li a:hover {background-color: #0f7c60;}
+  .search-box {
+  padding: 15px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-box button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background: #0b5f4a;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #0f7c60;
+}
+</style>
+</head>
+<script>
+function searchPage() {
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+
+  if (keyword.includes("khái quát")) window.location.href = "khaiquat.html";
+  else if (keyword.includes("lịch sử")) window.location.href = "lichsu.html";
+  else if (keyword.includes("văn hóa")) window.location.href = "vanhoa.html";
+  else if (keyword.includes("truyền thống")) window.location.href = "truyenthong.html";
+  else if (keyword.includes("địa danh")) window.location.href = "diadanh.html";
+  else if (keyword.includes("con người")) window.location.href = "connguoi.html";
+  else if (keyword.includes("ẩm thực")) window.location.href = "amthuc.html";
+  else if (keyword.includes("kinh tế")) window.location.href = "kinhte.html";
+  else if (keyword.includes("định hướng")) window.location.href = "dinhhuong.html";
+  else {
+    alert("Không tìm thấy nội dung phù hợp!");
+  }
+}
+</script>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">TRANG CHỦ</a></li>
+    <li><a href="khaiquat.html">THÔNG TIN CHUNG</a></li>
+    <li><a href="lichsu.html">LỊCH SỬ</a></li>
+    <li><a href="vanhoa.html">VĂN HÓA</a></li>
+    <li><a href="truyenthong.html">TRUYỀN THỐNG</a></li>
+    <li><a href="diadanh.html">ĐỊA DANH</a></li>
+    <li><a href="connguoi.html">CON NGƯỜI</a></li>
+    <li><a href="amthuc.html">ẨM THỰC</a></li>
+    <li><a href="kinhte.html">KINH TẾ</a></li>
+    <li><a href="dinhhuong.html">ĐỊNH HƯỚNG PHÁT TRIỂN</a></li>
+  </ul>
+</nav>
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Tìm nội dung...">
+  <button onclick="searchPage()">Tìm</button>
+</div>
+
+<h1>Chào mừng đến với Bình Định</h1>
+<p>Giới thiệu ngắn ở trang chủ...</p>
+
+</body>
+</html>
